@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vinyl_market'
+    'vinyl_market',
+    'pytest',
+    'pytest_django'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +55,7 @@ ROOT_URLCONF = 'Projekt_final.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'vinyl_market/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,3 +118,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'vinyl_market.User'
+
+LOGIN_URL = '/login/'

@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vinyl_market/style.css' %}">
+
+{% block content %}
+    <table id="market">
+        <th>Album</th>
+        <th>Artist</th>
+        <th>Price</th>
+        <th>Message user</th>
+
+    {% for offer in object_list %}
+        {% for artist in offer.album.artist.all %}
+            <tr>
+                <td>{{ offer.album.title }}</td>
+                <td>{{ artist.name }}</td>
+                <td>{{ offer.price }} &#8364;</td>
+                <td><a href={% url 'sent_message' offer.album.user_id %}>&#9993;</a></td>
+            </tr>
+        {% endfor %}
+        {% empty %}
+            <p>No offers yet.</p>
+    {% endfor %}
+    </table>
+{% endblock %}

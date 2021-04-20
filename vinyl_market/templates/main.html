@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vinyl_market/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vinyl Market</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href={% url 'about_view' %}>ABOUT</a></li>
+        <li><a href={% url 'user_offer_public_view' %}>MARKET</a></li>
+        {% if user.is_authenticated %}
+        <li><a href={% url 'add_artist_view' %}>ARTISTS</a></li>
+        <li><a href={% url 'album_list_view' %}>MY ALBUMS</a></li>
+        <li><a href={% url 'messages_view' %}>MESSAGES</a></li>
+        <li><a href={% url 'logout_view' %}>LOG OUT</a></li>
+        {% else %}
+         <li><a href={% url 'login_view' %}>LOG IN</a></li>
+         <li><a href={% url 'register_user_view' %}>REGISTER</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+    {% if message2 %}
+<p id="main_page_message">{{ message2 }}</p>
+    {% endif %}
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

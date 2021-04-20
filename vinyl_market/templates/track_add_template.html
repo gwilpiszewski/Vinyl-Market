@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% load static %}
+
+    {% for artist in album.artist.all %}
+        <p id="artist_list_p">{{ artist }}</p>
+    {% endfor %}
+
+    <p id="artist_list_p">Album: {{ album.title }}</p>
+    <form id="form-container" method="post">
+        {% csrf_token %}
+        <div class="track-form">
+            {{ form.as_p }}
+        </div>
+<button id="add-form" type="button">Add NEXT</button>
+<button type="submit">Save Track(s)</button>
+</form>
+<script src="{% static 'app.js' %}"></script>
+{% endblock %}

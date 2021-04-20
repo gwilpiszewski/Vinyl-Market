@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+    <ul>
+        <li><a href={% url 'track_add_view' album.id %}>ADD TRACKS</a></li>
+        <li><a href={% url 'add_genre_view' %}>ADD GENRE</a></li>
+        <li><a href={% url 'album_list_view' %}>ALBUM LIST</a></li>
+    </ul>
+    <h2>Update the album:</h2>
+
+    <h3>Artist(s): </h3>
+        {% for artist in album.artist.all %}
+        <p id="artist_list_p"><a href={% url 'artist_update_view' artist.id %}>{{ artist }}</a></p>
+        {% endfor %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Update the album"></form>
+{% endblock %}
+
+

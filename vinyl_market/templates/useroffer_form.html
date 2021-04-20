@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+    <p id="artist_list_p">Add the album to the market</p>
+    <p></p>
+<div id="album_info">
+<p>Album title {{ album }}</p>
+<p>Artist: {{ album.artist.all.0 }}</p>
+<p>Album title: {{ album.title }}</p>
+<p>Release date/country: {{ album.released }} {{ album.country }}
+<p>Label: {{ album.label }}</p>
+</div>
+<p><form action="" method="post">
+    {% csrf_token %}
+    <input type="number" name="price">&#8364
+    <input type="submit" value="Add to market"></form>
+
+{% endblock %}

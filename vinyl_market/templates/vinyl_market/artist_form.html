@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+    <h2>Add new artist:</h2>
+
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Artist"></form>
+
+    <p id="artist_list_p">Artist list (click to edit):</p>
+    <ul class="artist_list">
+        {% for artist in artists|dictsort:"name" %}
+            <li><a href={% url 'artist_update_view' artist.id %}>{{ artist.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

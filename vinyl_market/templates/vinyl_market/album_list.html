@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block content %}
+    <ul>
+        <li><a href={% url 'add_album_view' %}>ADD ALBUM</a></li>
+        <li><a href={% url 'add_album_many_artists' %}>ADD MANY ARTIST ALBUM</a></li>
+        <li><a href={% url 'add_genre_view' %}>ADD GENRE</a></li>
+    </ul>
+
+    <table>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Release date</th>
+        <th>Add to market</th>
+
+    {% for album in object_list %}
+        {% for artist in album.artist.all %}
+                <tr>
+                <td><a href={% url 'artist_update_view' artist.id %}>{{ artist.name }}</a></td>
+                <td><a href={% url 'album_detail_view' album.id %}>{{ album.title }}</a></td>
+                <td>{{ album.released }}</td>
+                <td><a href={% url 'album_add_to_market_view' album.id %}>&#9737</a></td>
+            </tr>
+        {% endfor %}
+        {% empty %}
+            <p>No albums yet.</p>
+    {% endfor %}
+    </table>
+{% endblock %}

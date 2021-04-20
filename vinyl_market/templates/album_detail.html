@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <ul>
+        <li><a href={% url 'album_update_view' album.id %}>UPDATE ALBUM</a></li>
+        <li><a href={% url 'track_add_view' album.id %}>ADD TRACKS</a></li>
+        <li><a href={% url 'delete_album_view' album.id %}>DELETE ALBUM</a></li>
+        <li><a href={% url 'add_genre_view' %}>ADD GENRE</a></li>
+    </ul>
+
+    <div id="album_info">
+        Artist:
+        {% for artist in album.artist.all %}
+            <p id="artist_list_p"> <a href={% url 'artist_update_view' artist.id %}>{{ artist }}</a></p>
+        {% endfor %}
+            <p>Album title: {{ album.title }}</p>
+            <p>Release date/country: {{ album.released }} {{ album.country }}</p>
+            <p>Label: {{ album.label }}</p>
+            <p>Tracks:</p>
+        <ol>
+            {% for track in album.track_set.all %}
+                <li>{{ track.name }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}

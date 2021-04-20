@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+    <ul>
+        <li><a href={% url 'add_album_many_artists' %}>ADD MANY ARTIST ALBUM</a></li>
+        <li><a href={% url 'add_genre_view' %}>ADD GENRE</a></li>
+    </ul>
+    <h2>Add an album</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add an album"></form>
+{% endblock %}

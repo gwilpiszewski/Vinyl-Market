@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete the message  ?</p>
+        <p id="artist_list_p">"{{ message.message }}" by {{ message.sender }}</p>
+        <p id="artist_list_p2"><button type="submit" value="Confirm">Confirm</button></p>
+
+    </form>
+
+{% endblock %}

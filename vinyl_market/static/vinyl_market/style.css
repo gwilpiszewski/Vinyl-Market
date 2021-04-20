@@ -1,0 +1,229 @@
+body {
+    background: url('vinyl-large.jpg') center center fixed;
+    background-size: cover;
+    text-align: center;
+    font-family: "Noto Sans Light", serif;
+}
+
+h2, h3 {
+    background: #333333;
+    margin: auto;
+    border-radius: 25px;
+    padding: 6px;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    position: center;
+    color: white;
+    border: 1px solid dimgrey;
+}
+
+#artist_list_p {
+    background: #333333;
+    margin: auto;
+    border-radius: 25px;
+    padding: 6px;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    position: center;
+    color: white;
+    border: 1px solid dimgrey;
+}
+
+#artist_list_p2 {
+    background: #333333;
+    margin: auto;
+    border-radius: 25px;
+    padding: 6px;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    position: center;
+    color: white;
+}
+
+form {
+    display: inline-block;
+    text-align: right;
+    color: white;
+    position: center;
+    background: #333333;
+    padding: 10px;
+    border-radius: 25px;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    border: 1px solid dimgrey;
+
+}
+
+input {
+    background: white;
+    padding: 9px 0;
+    border-radius: 25px;
+    width: 200px;
+    height: 5px;
+    margin-right: auto;
+    position: center;
+
+}
+
+#id_bio {
+    background: white;
+    padding: 7px 0;
+    border-radius: 25px;
+    width: 200px;
+    height: 80px;
+    margin-right: auto;
+
+}
+
+button, input[type='submit'] {
+    position: center;
+    background: #b5b5b5;
+    padding: 5px 20px 20px 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 5px;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+
+}
+
+ul li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: dimgray;
+}
+
+table {
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    table-layout: auto;
+    table-border-color-dark: #333333;
+
+}
+
+th {
+    width: 210px;
+    color: black;
+}
+
+tr {
+    background-color: gray;
+    width: auto;
+    text-align: center;
+    position: center;
+    margin-top: 100px;
+    padding: 10px;
+}
+
+ul.artist_list li a {
+    display: inline-block;
+    align-items: center;
+    color: white;
+
+
+}
+
+ul.genre_list li {
+    display: inline-block;
+    align-items: center;
+    color: white;
+    padding: 13px;
+    text-align: center;
+}
+
+#genre_list_p {
+    background: #333333;
+    margin: auto;
+    border-radius: 25px;
+    padding: 6px;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    position: center;
+    color: white;
+    border: 1px solid dimgrey;
+}
+
+p.message {
+    background: #333333;
+    margin: auto;
+    border-radius: 25px;
+    padding: 6px;
+    text-align: center;
+    width: 400px;
+    height: auto;
+    position: center;
+    color: red;
+    border: 1px solid dimgrey;
+}
+
+a:link{
+    color: ghostwhite;
+}
+
+a:visited {
+    color: ghostwhite;
+}
+
+#album_info {
+    display: inline-block;
+    background: #333333;
+    position: center;
+    border: 1px solid dimgrey;
+    border-radius: 25px;
+    color: white;
+    padding: 23px;
+    min-height: auto;
+    text-align: left;
+
+}
+
+#home_info {
+    display: inline-block;
+    background: #333333;
+    position: center;
+    margin: 100px;
+    border-radius: 25px;
+    overflow: auto;
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+}
+
+#main_page_message {
+    display: block;
+    background: #333333;
+    position: center;
+    margin: 100px;
+    border-radius: 25px;
+    overflow: auto;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    size: auto;
+
+}

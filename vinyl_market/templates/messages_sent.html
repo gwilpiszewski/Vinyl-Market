@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+    <ul>
+        <li><a href={% url 'messages_view' %}>RECEIVED</a></li>
+        <li><a href={% url 'messages_sent' %}>SENT</a></li>
+    </ul>
+
+    <table>
+        <th>To</th>
+        <th>Message</th>
+        <th>Created</th>
+        <th>&#128465;</th>
+        {% for message in messages %}
+            <tr>
+                <td><a href={% url 'sent_message' message.receiver.id %}>{{ message.receiver }}</a></td>
+                <td>{{ message.message }}</td>
+                <td>{{ message.created }}</td>
+                <td><a href={% url 'del_message' message.id %}>&#128465;</a></td>
+            </tr>
+        {% empty %}
+            <h2>No messages</h2>
+        {% endfor %}
+    </table>
+{% endblock %}

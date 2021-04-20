@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update artist">
+    </form>
+
+    <p id="genre_list_p">Albums by {{ artist }}:</p>
+
+    <table>
+    {% for album in artist.album_set.all %}
+    <p id="genre_list_p"><a href="{% url 'album_detail_view' album.id %}">{{ album }}</a></p>
+    {% endfor %}
+    </table>
+{% endblock %}

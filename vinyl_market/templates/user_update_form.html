@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block user_update %}
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <title>Update user name</title>
+    <h2>Update user name</h2>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" value="Update user"></form>
+{{ message }}
+</body>
+</html>
+{% endblock %}

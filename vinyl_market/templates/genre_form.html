@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add genre"></form>
+    <p id="genre_list_p">Genre list</p>
+        <ul class="genre_list">
+            {% for genre in genres|dictsort:"kind" %}
+                <li>{{ genre.kind }}</li>
+            {% endfor %}
+        </ul>
+{% endblock %}
+
